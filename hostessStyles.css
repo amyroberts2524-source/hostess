@@ -1,0 +1,431 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  color: #f78aa3;
+  font-size: 34px;
+  position: absolute;
+  top: 55px;
+  left: 7%;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: 35px auto 0;
+  border: 1px solid #dddddd;
+  border-radius: 40px;
+  padding: 10px 20px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.location-selector {
+  border: none;
+  background-color: white;
+  font-size: 19px;
+  padding: 5px 25px;
+}
+
+.location-selector + .location-selector {
+  border-left: 1px solid #dddddd;
+}
+
+.location-menu {
+  position: relative;
+}
+
+.location-dropdown {
+  display: none;
+  position: absolute;
+  top: 55px;
+  left: 0;
+  width: 210px;
+  background-color: white;
+  border: 1px solid #dddddd;
+  border-radius: 18px;
+  padding: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  z-index: 200;
+}
+
+.location-dropdown.show {
+  display: block;
+}
+
+.location-dropdown button {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: white;
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.location-dropdown button:hover {
+  background-color: #f5f5f5;
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 35px;
+}
+
+.filters,
+.bigger-pill {
+  border: 1px solid #dddddd;
+  border-radius: 30px;
+  background-color: white;
+  padding: 10px 18px;
+  width: auto;
+  min-width: auto;
+  font-size: 15px;
+}
+
+
+.profile-menu {
+  position: absolute;
+  top: 42px;
+  right: 7%;
+  z-index: 100;
+}
+
+.profile-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.profile-icon {
+  font-size: 25px;
+  color: #717171;
+}
+
+.profile-dropdown {
+  display: none;
+  position: absolute;
+  top: 55px;
+  right: 0;
+  width: 200px;
+  background-color: white;
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile-dropdown button {
+  width: 100%;
+  border: none;
+  background-color: white;
+  padding: 14px;
+  text-align: left;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.profile-dropdown button:hover {
+  background-color: #f5f5f5;
+}
+
+.profile-dropdown.show {
+  display: block;
+}
+
+.guesthousesTotal {
+  margin: 55px 7% 35px;
+  font-family: Arial, sans-serif;
+  font-size: 26px;
+  color: #222222;
+}
+
+.pictures {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-left: 7%;
+  margin-right: 7%;
+}
+
+.guest-house {
+  width: 100%;
+  min-width: 0;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+}
+
+.guest-house img {
+  width: 100%;
+  height: 260px;
+  display: block;
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+.guest-house p {
+  margin-left: 4px;
+}
+
+.guest-house p:nth-of-type(1) {
+  margin-top: 14px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #222222;
+}
+
+.guest-house p:nth-of-type(2) {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #6a6a6a;
+}
+
+.guest-house p:nth-of-type(3) {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #222222;
+}
+
+@media (max-width: 1200px) {
+  .pictures {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .pictures {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .pictures {
+    grid-template-columns: 1fr;
+  }
+}
+
+.filters.active,
+.bigger-pill.active {
+  background-color: #222222;
+  color: white;
+  border-color: #222222;
+}
+
+@media (max-width: 1200px) {
+  .pictures {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .filter-bar {
+    flex-wrap: wrap;
+    padding: 0 5%;
+  }
+}
+
+@media (max-width: 900px) {
+  .logo {
+    position: static;
+    margin: 30px 5% 20px;
+    font-size: 30px;
+  }
+
+  .profile-menu {
+    top: 25px;
+    right: 5%;
+  }
+
+  .top-bar {
+    margin: 10px auto 0;
+    max-width: 90%;
+  }
+
+  .location-selector {
+    font-size: 16px;
+    padding: 5px 16px;
+  }
+
+  .filter-bar {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 5px 5% 10px;
+    margin-top: 25px;
+    scrollbar-width: none;
+  }
+
+  .filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filters,
+  .bigger-pill {
+    flex-shrink: 0;
+  }
+
+  .guesthousesTotal {
+    margin: 40px 5% 30px;
+    font-size: 23px;
+  }
+
+  .pictures {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .guest-house img {
+    height: 240px;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    margin: 25px 5% 20px;
+    font-size: 28px;
+  }
+
+  .profile-menu {
+    top: 20px;
+    right: 5%;
+  }
+
+  .profile-button {
+    width: 42px;
+    height: 42px;
+  }
+
+  .profile-icon {
+    font-size: 22px;
+  }
+
+  .top-bar {
+    width: 90%;
+    max-width: none;
+    margin: 15px auto 0;
+    padding: 7px 8px;
+    border-radius: 30px;
+  }
+
+  .location-selector {
+    font-size: 14px;
+    padding: 7px 10px;
+    white-space: nowrap;
+  }
+
+  .top-bar > .location-selector:first-child {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .location-menu {
+    flex-shrink: 0;
+  }
+
+  .location-dropdown {
+    width: 190px;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .filter-bar {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 8px;
+    margin-top: 22px;
+    padding: 5px 5% 10px;
+    scrollbar-width: none;
+  }
+
+  .filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filters,
+  .bigger-pill {
+    flex-shrink: 0;
+    padding: 9px 15px;
+    font-size: 14px;
+  }
+
+  .guesthousesTotal {
+    margin: 32px 5% 25px;
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .pictures {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .guest-house img {
+    width: 100%;
+    height: 280px;
+    border-radius: 18px;
+  }
+
+  .guest-house p:nth-of-type(1) {
+    font-size: 16px;
+  }
+
+  .guest-house p:nth-of-type(2),
+  .guest-house p:nth-of-type(3) {
+    font-size: 15px;
+  }
+
+  .profile-dropdown {
+    width: 190px;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo {
+    font-size: 26px;
+  }
+
+  .top-bar {
+    width: 94%;
+  }
+
+  .location-selector {
+    font-size: 12px;
+    padding: 7px 7px;
+  }
+
+  .guesthousesTotal {
+    font-size: 18px;
+  }
+
+  .pictures {
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+
+  .guest-house img {
+    height: 240px;
+  }
+}

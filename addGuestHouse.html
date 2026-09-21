@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Add Guest House</title>
+
+  <link rel="stylesheet" href="addGuestHouse.css">
+</head>
+
+<body class="add-house-page">
+
+  <header class="add-house-header">
+    <a href="hostessFrontend.html" class="add-house-logo">hostess</a>
+  </header>
+
+  <main class="add-house-container">
+
+    <div class="add-house-title">
+      <h1>Add your guest house</h1>
+      <p>Share your property with guests looking for a place to stay in Windhoek.</p>
+    </div>
+
+    <form id="guestHouseForm" class="guest-house-form">
+
+      <div class="form-group">
+        <label for="name">Guest house name</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="e.g. Sunset Guest House"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input
+          type="text"
+          id="location"
+          placeholder="e.g. Dorado"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price per night</label>
+
+        <div class="price-input">
+          <span>N$</span>
+          <input
+            type="number"
+            id="price"
+            placeholder="500"
+            required
+          >
+        </div>
+      </div>
+
+    <div class="form-group">
+  <label for="image">Property image</label>
+
+  <input
+    type="file"
+    id="image"
+    accept="image/*"
+    required
+  >
+</div>
+
+      </div>
+
+
+      <div class="amenities-section">
+
+        <p class="amenities-title">What does your guest house offer?</p>
+
+        <div class="amenities-grid">
+
+          <label class="amenity-option">
+            <input type="checkbox" id="parking">
+            Free parking
+          </label>
+
+          <label class="amenity-option">
+            <input type="checkbox" id="wifi">
+            Wifi
+          </label>
+
+          <label class="amenity-option">
+            <input type="checkbox" id="kitchen">
+            Kitchen
+          </label>
+
+          <label class="amenity-option">
+            <input type="checkbox" id="aircon">
+            Aircon
+          </label>
+
+          <label class="amenity-option">
+            <input type="checkbox" id="tv">
+            TV
+          </label>
+
+          <label class="amenity-option">
+            <input type="checkbox" id="pets">
+            Pets allowed
+          </label>
+
+          <label class="amenity-option">
+            <input type="checkbox" id="pool">
+            Pool
+          </label>
+
+          <label class="amenity-option">
+            <input type="checkbox" id="mall">
+            Close to mall
+          </label>
+
+          <label class="amenity-option">
+            <input type="checkbox" id="cbd">
+            Close to CBD
+          </label>
+
+        </div>
+
+      </div>
+
+
+      <div class="form-group">
+        <label for="bathrooms">Number of bathrooms</label>
+
+        <input
+          type="number"
+          id="bathrooms"
+          min="1"
+          value="1"
+          required
+        >
+      </div>
+
+
+      <button type="submit" class="add-house-button">
+        Add Guest House
+      </button>
+
+    </form>
+
+  </main>
+
+  <script src="addGuestHouse.js"></script>
+
+</body>
+
+</html>

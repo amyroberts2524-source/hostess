@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hostess</title>
+  <link rel="stylesheet" href="hostessStyles.css">
+</head>
+
+<body>
+
+  <p class="logo">hostess</p>
+
+  <div class="top-bar">
+    <button class="location-selector">Guest Houses in Windhoek</button>
+    <button class="location-selector">Anywhere</button>
+    <button class="location-selector">Any date</button>
+  </div>
+
+
+<div class="profile-menu">
+
+  <button class="profile-button" id="profileButton">
+    <span class="profile-icon">●</span>
+  </button>
+
+  <div class="profile-dropdown" id="profileDropdown">
+   <button onclick="window.location.href='addGuestHouse.html'">
+  Add your guest house
+</button>
+  </div>
+
+</div>
+
+
+  <div class="filter-bar">
+    <button class="filters" data-filter="all">Filters</button>
+    <button class="bigger-pill" data-filter="parking">Free parking</button>
+    <button class="filters" data-filter="wifi">Wifi</button>
+    <button class="filters" data-filter="kitchen">Kitchen</button>
+    <button class="filters" data-filter="aircon">Aircon</button>
+    <button class="filters" data-filter="tv">TV</button>
+    <button class="filters" data-filter="pets">Pets</button>
+    <button class="bigger-pill" data-filter="bathrooms">1 + Bathrooms</button>
+    <button class="filters" data-filter="pool">Pool</button>
+    <button class="bigger-pill" data-filter="mall">Close to mall</button>
+    <button class="bigger-pill" data-filter="cbd">Close to CBD</button>
+  </div>
+
+  <p class="guesthousesTotal">
+    Guest Houses found specially for you <span id="house-count">4</span>
+  </p>
+
+  <div class="pictures" id="guestHouseContainer">
+</div>
+  <script src="scriptHostess.js"></script>
+
+</body>
+</html>
