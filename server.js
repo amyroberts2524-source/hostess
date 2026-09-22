@@ -4,7 +4,17 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 
+const { v2: cloudinary } = require('cloudinary');
 const app = express();
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
+
+
 
 
 const uploadFolder = path.join(__dirname, 'Project files', 'uploads');
@@ -80,7 +90,7 @@ app.get('/api/guest-houses', (req, res) => {
 app.post(
   '/api/guest-houses',
   upload.single('image'),
-  (req, res) => {
+  async (req, res) => {
 
     try {
 
@@ -119,8 +129,13 @@ app.post(
       }
 
 
-      const image =
-        `Project files/uploads/${req.file.filename}`;
+   const uploadResult = await cloudinary.uploader.upload(req.file.path, {
+  folder: 'hostess'
+});
+
+const image = uploadResult.secure_url;
+
+fs.unlinkSync(req.file.path);
 
 
       const sql = `
